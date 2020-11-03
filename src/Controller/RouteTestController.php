@@ -5,6 +5,10 @@ use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
 
+/**
+ * Class RouteTestController
+ * @package App\Controller
+ */
 class RouteTestController extends AbstractController
 {
     /**
