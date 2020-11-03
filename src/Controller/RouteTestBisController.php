@@ -5,10 +5,17 @@ use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
 
-class RouteTestController extends AbstractController
+/**
+ * Class RouteTestBisController
+ * @package App\Controller
+ *
+ * @Route("/route-bis")
+ */
+class RouteTestBisController extends AbstractController
 {
     /**
-     * @Route("/route/test", name="nom-de-ma-route")
+     * @Route("/test", name="nom-de-ma-route-bis")
+     * En réalité, la route de cette action sera /route-bis/test
      */
     public function testAction()
     {
@@ -16,7 +23,8 @@ class RouteTestController extends AbstractController
     }
 
     /**
-     * @Route("/route/with-variable/{id}", name="nom-de-ma-route-2")
+     * @Route("/with-variable/{id}", name="nom-de-ma-route-2-bis")
+     * En réalité, la route de cette action sera /route-bis/with-variable/{id}
      */
     public function routeWithVariableAction($id)
     {
@@ -26,9 +34,9 @@ class RouteTestController extends AbstractController
 
     /**
      * @Route(
-     *     "/route/with-variable-and-default-value/{page}",
+     *     "/with-variable-and-default-value/{page}",
      *     defaults={"page": "1"},
-     *     name="nom-de-ma-route-3"
+     *     name="nom-de-ma-route-3-bis"
      * )
      */
     public function withDefaultValuesAction($page)
@@ -38,8 +46,8 @@ class RouteTestController extends AbstractController
 
     /**
      * @Route(
-     *     "/route/with-variable-and-default-value-bis/{page}",
-     *     name="nom-de-ma-route-4"
+     *     "/with-variable-and-default-value-bis/{page}",
+     *     name="nom-de-ma-route-4-bis"
      * )
      */
     public function withDefaultValuesBisAction($page=1)
@@ -49,10 +57,10 @@ class RouteTestController extends AbstractController
 
     /**
      * @Route(
-     *     "/route/with-constraint/{page}",
+     *     "/with-constraint/{page}",
      *     defaults={"page": "1"},
      *     requirements={"page": "\d+"},
-     *     name="nom-de-ma-route-5"
+     *     name="nom-de-ma-route-5-bis"
      * )
      */
     public function withConstraintAction($page)
@@ -62,7 +70,7 @@ class RouteTestController extends AbstractController
 
     /**
      * @Route(
-     *     "/route/with-multiple-constraints/{year}/{month}/{filename}.{extension}",
+     *     "/with-multiple-constraints/{year}/{month}/{filename}.{extension}",
      *     defaults={
      *         "extension": "html"
      *     },
@@ -71,7 +79,7 @@ class RouteTestController extends AbstractController
      *         "month": "\d{2}",
      *         "extension": "html|xml|css|js"
      *     },
-     *     name="nom-de-ma-route-6"
+     *     name="nom-de-ma-route-6-bis"
      * )
      */
     public function withMultipleConstraintsAction($year, $month, $filename, $extension)
@@ -81,11 +89,11 @@ class RouteTestController extends AbstractController
 
     /**
      * @Route(
-     *     "/route/with-http-method-constraint/{page}",
+     *     "/with-http-method-constraint/{page}",
      *     defaults={"page": "1"},
      *     requirements={"page": "\d+"},
      *     methods={"GET"},
-     *     name="nom-de-ma-route-7")
+     *     name="nom-de-ma-route-7-bis")
      */
     public function withHttpMethodConstraintAction($page)
     {
