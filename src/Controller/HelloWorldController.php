@@ -20,7 +20,7 @@ class HelloWorldController
     }
 
     /**
-     * @Route("hello")
+     * @Route("/hello", name="hello")
      * @param Request $request
      * @return Response
      */
