@@ -1,5 +1,5 @@
 <?php
-namespace App\Controller;
+namespace App\Controller\Twig;
 
 use App\MySampleClass\MyClass1;
 use App\MySampleClass\MyClass2;
@@ -7,18 +7,19 @@ use App\MySampleClass\MyClass3;
 use App\MySampleClass\MyClass4;
 use App\MySampleClass\MyClass5;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
+use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
 
 /**
- * Class TwigController
+ * Class DisplayVariablesController
  * @package App\Controller
  * @Route("/twig")
  */
-class TwigController extends AbstractController
+class DisplayVariablesController extends AbstractController
 {
     /**
      * @Route("/display_variables", name="twig_display_variables")
-     * @return \Symfony\Component\HttpFoundation\Response
+     * @return Response
      */
     public function displayVariablesAction()
     {
