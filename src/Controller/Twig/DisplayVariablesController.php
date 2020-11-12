@@ -12,7 +12,7 @@ use Symfony\Component\Routing\Annotation\Route;
 
 /**
  * Class DisplayVariablesController
- * @package App\Controller
+ * @package App\Controller\Twig
  * @Route("/twig")
  */
 class DisplayVariablesController extends AbstractController

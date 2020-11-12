@@ -7,7 +7,7 @@ use Symfony\Component\Routing\Annotation\Route;
 
 /**
  * Class FiltersController
- * @package App\Controller
+ * @package App\Controller\Twig
  * @Route("/twig")
  */
 class FiltersController extends AbstractController
