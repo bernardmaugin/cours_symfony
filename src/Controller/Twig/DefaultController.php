@@ -20,4 +20,13 @@ class DefaultController extends AbstractController
     {
         return $this->render('twig/functions.html.twig');
     }
+
+    /**
+     * @Route("/conditions/{stock}", name="twig_conditions")
+     * @return Response
+     */
+    public function conditionsAction($stock)
+    {
+        return $this->render('twig/conditions.html.twig', ['stock' => $stock]);
+    }
 }
