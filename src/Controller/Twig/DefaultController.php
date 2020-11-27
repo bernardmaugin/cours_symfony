@@ -85,4 +85,22 @@ class DefaultController extends AbstractController
         // Dans le contrôleur, on appelle le template fils
         return $this->render('twig/inheritance/child.html.twig');
     }
+
+    /**
+     * @Route("/macro", name="twig_macro")
+     * @return Response
+     */
+    public function macroAction()
+    {
+        return $this->render('twig/macro/usage.html.twig');
+    }
+
+    /**
+     * @Route("/macro-bis", name="twig_macro_bis")
+     * @return Response
+     */
+    public function macroBisAction()
+    {
+        return $this->render('twig/macro/declaration_and_usage.html.twig');
+    }
 }
