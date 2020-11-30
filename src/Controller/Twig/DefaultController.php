@@ -4,6 +4,7 @@ namespace App\Controller\Twig;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
+use Symfony\Component\Routing\Generator\UrlGeneratorInterface;
 
 /**
  * Class DefaultController
@@ -111,5 +112,19 @@ class DefaultController extends AbstractController
     public function globalVariableAction()
     {
         return $this->render('twig/global_variable.html.twig');
+    }
+
+    /**
+     * @Route("/urls", name="twig_urls")
+     * @return Response
+     */
+    public function urlsAction()
+    {
+        $urls = [];
+        $urls[] = $this->get('router')->generate('nom-de-ma-route-6', ['year' => 2018, 'month' => '01', 'filename' => 'test']);
+        $urls[] = $this->generateUrl('nom-de-ma-route-6', ['year' => 2018, 'month' => '01', 'filename' => 'test']);
+        $urls[] = $this->generateUrl('nom-de-ma-route-6', ['year' => 2018, 'month' => '01', 'filename' => 'test'], UrlGeneratorInterface::ABSOLUTE_URL);
+
+        return $this->render('twig/urls.html.twig', ['urls' => $urls]);
     }
 }
