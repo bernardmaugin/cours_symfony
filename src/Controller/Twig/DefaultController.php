@@ -13,7 +13,7 @@ use Symfony\Component\Routing\Generator\UrlGeneratorInterface;
  */
 class DefaultController extends AbstractController
 {
-    const TOTO = 10;
+    const TOTO = 10; // TEST
 
     /**
      * @Route("/functions", name="twig_functions")
